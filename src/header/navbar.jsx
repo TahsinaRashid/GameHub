@@ -50,7 +50,7 @@ const Navbar = () => {
         </>
     );
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar">
             <div className="flex-1">
                 <NavLink to="/">
                     <img src={logo} alt="GameHub Logo" className="h-8 rounded-2xl" /> 
