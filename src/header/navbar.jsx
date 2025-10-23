@@ -29,31 +29,33 @@ const Navbar = () => {
 
     const rightSideLinks = user ? (
         <>
-            <li className="font-bold "><NavLink to="/">Home</NavLink></li>
+            <li className=" bg-amber-900 font-bold text-onclick text-white rounded-2xl border-4 border-amber-200 "><NavLink to="/">Home</NavLink></li>
             <li>
                 <NavLink to="/profile">
                     <img
                         src={user.photoURL || "https://via.placeholder.com/32/7f8c8d/ffffff?text=U"} 
                         alt={`${user.displayName || 'User'}'s profile`}
-                        className="w-8 h-8 rounded-full object-cover border-2 border-primary cursor-pointer" 
+                        className="w-8 h-8 rounded-full object-cover border border-amber-200 cursor-pointer" 
                         title={`My Profile (${user.displayName || user.email})`}
                     />
                 </NavLink>
             </li>
-            <li className="font-bold"><button onClick={handleSignOut}>Sign Out</button> </li>
+            <li>
+                <button className=" bg-amber-900 font-bold text-onclick text-white rounded-2xl border-4 border-amber-200" onClick={handleSignOut}>Log Out</button> 
+            </li>
         </>
     ) : (
         <>
-            <li className="font-bold text-onclick"><NavLink to="/">Home</NavLink></li>
-            <li className="font-bold"><NavLink to="/login">Login</NavLink></li>
-            <li className="font-bold"><NavLink to="/register">Register</NavLink></li>
+        <li><button className=" bg-amber-900 font-bold text-onclick text-white rounded-2xl border-4 border-amber-200 mr-2"><NavLink to="/">Home</NavLink></button></li>
+        <li><button className=" bg-amber-900 font-bold text-onclick text-white rounded-2xl border-4 border-amber-200 mr-2"><NavLink to="/login">Log In</NavLink></button></li>
+        <li><button className=" bg-amber-900 font-bold text-onclick text-white rounded-2xl border-4 border-amber-200 mr-2"><NavLink to="/register">Register</NavLink></button></li>
         </>
     );
     return (
         <div className="navbar">
             <div className="flex-1">
                 <NavLink to="/">
-                    <img src={logo} alt="GameHub Logo" className="h-8 rounded-2xl" /> 
+                    <img src={logo} alt="GameHub Logo" className="h-10 rounded-2xl border-2 border-yellow-400 shadow-yellow-500" /> 
                 </NavLink>
             </div>
             <div className="">
@@ -64,7 +66,7 @@ const Navbar = () => {
             <div className="dropdown dropdown-end lg:hidden">
                 <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">{rightSideLinks}
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 rounded-full w-52 hover:bg-black">{rightSideLinks}
                 </ul>
             </div>
         </div>

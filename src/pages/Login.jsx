@@ -30,7 +30,7 @@ const Login =()=>{
     // }
 
     return(
-        <div>
+        <div className="text-white">
             <h2>Please Login</h2>
             <button onClick={handleGoogleSignIn}>Sign in with Google</button>
             {/* <button onClick={handleSignOut}>Sign Out</button> */}
