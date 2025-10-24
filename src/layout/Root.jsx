@@ -18,6 +18,7 @@ const Root = () => {
                 <div className="container mx-auto p-4">
                  <Outlet />
                 </div>
+            
             </div>
             <Footer />
         </>

@@ -10,6 +10,9 @@ import Profile from './pages/profile.jsx';
 import GameDetails from './pages/GameDetails.jsx';
 import Register from './pages/Register.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
+import About from './pages/About.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -37,6 +40,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/about",
+        element: (
+          <PrivateRoute>
+            <About/> 
+          </PrivateRoute>
+        ),
+       },
+      {
         path : "/game/:id",
         element:(
           <PrivateRoute>
@@ -45,6 +56,12 @@ const router = createBrowserRouter([
         ),
       },
     ]
+    
+  },
+  {
+    path: '/*',
+    Component: ErrorPage , 
+    
   },
 ]);
 
