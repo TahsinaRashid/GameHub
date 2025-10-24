@@ -6,6 +6,8 @@ import { RouterProvider } from "react-router/dom";
 import Root from './layout/Root.jsx';
 import Login from './pages/Login.jsx';
 import Home from './pages/Home.jsx';
+import Profile from './pages/profile.jsx';
+import GameDetails from './pages/GameDetails.jsx';
 import Register from './pages/Register.jsx';
 
 const router = createBrowserRouter([
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path : '/register',
         Component:Register
+      },
+      {
+        path : '/profile',
+        Component:Profile
+      },
+      {
+        path : '/game/:id',
+        Component:GameDetails
       },
     ]
   },

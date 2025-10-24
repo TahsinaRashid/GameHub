@@ -21,13 +21,6 @@ const Root = () => {
             </div>
             <Footer />
         </>
-        // <div>
-        //     <div className="bg-gradient-to-r from-pink-200 to-yellow-600">
-        //         <Navbar></Navbar>
-        //         <Outlet></Outlet>
-        //     </div>
-        //     <Footer></Footer>
-        // </div>
         
     );
 };

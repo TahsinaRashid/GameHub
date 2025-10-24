@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknown's Battle Ground (PUBG)",
+    "coverPhoto": "https://i.imgur.com/k6lP0Wn.jpg",
+    "category": "Battle Royale / Shooter",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced, high-stakes battle royale game where 100 players parachute onto an island to scavenge for weapons and fight to be the last one standing.",
+    "ratings": "4.5",
+    "developer": "Krafton",
+    "platform": "Mobile, PC, Console"
+  },
+  {
+    "id": "2",
+    "title": "Garena Free Fire",
+    "coverPhoto": "https://i.imgur.com/g8rGfJd.png",
+    "category": "Battle Royale / Action",
+    "downloadLink": "https://ff.garena.com/",
+    "description": "Free Fire is a free-to-play mobile survival shooter, known for its quick 10-minute matches and compact 50-player battlegrounds, optimized for smooth performance on lower-end devices.",
+    "ratings": "4.3",
+    "developer": "Garena",
+    "platform": "Mobile"
+  },
+  {
+    "id": "3",
+    "title": "Ludo King",
+    "coverPhoto": "https://i.imgur.com/N3vT5xP.png",
+    "category": "Board Game / Dice",
+    "downloadLink": "https://ludoking.com/",
+    "description": "Ludo King is a digital adaptation of the classic Indian board game 'Pachisi'. It's a cross-platform, multi-player race game based on rolling dice.",
+    "ratings": "4.4",
+    "developer": "Gametion Technologies",
+    "platform": "Mobile"
+  }
+]

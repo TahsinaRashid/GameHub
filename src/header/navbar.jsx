@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"; 
 import logo from "../assets/logo.png";
-import  {app}  from "../firebase/firebase.init"; 
-
-const auth = getAuth(app);
+import  { app}  from "../firebase/firebase.init"; 
+import {auth} from "../firebase/firebase.init";
 
 const Navbar = () => {
     const [user, setUser] = useState(null);
@@ -52,7 +51,7 @@ const Navbar = () => {
         </>
     );
     return (
-        <div className="navbar">
+        <div className="navbar lg:px-32">
             <div className="flex-1">
                 <NavLink to="/">
                     <img src={logo} alt="GameHub Logo" className="h-10 rounded-2xl border-2 border-yellow-400 shadow-yellow-500" /> 
