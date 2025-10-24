@@ -8,7 +8,6 @@ const googleprovider = new GoogleAuthProvider();
 const Register=()=>{
   const [ user,setUser]=useState(null);
   const handleGoogleSignIn =() =>{
-          // console.log('Google sign clicked');
           signInWithPopup(auth,googleprovider)
           .then(result =>{
               console.log(result.user);
