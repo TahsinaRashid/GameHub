@@ -1,4 +1,4 @@
-import { Children, Component, StrictMode } from 'react'
+import { React,Children, Component, StrictMode } from 'react'
 import  {createRoot}  from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter } from "react-router";
@@ -12,6 +12,7 @@ import Register from './pages/Register.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import About from './pages/About.jsx';
+import AuthProvider from './context/AuthContext.jsx';
 
 
 const router = createBrowserRouter([
@@ -49,11 +50,9 @@ const router = createBrowserRouter([
        },
       {
         path : "/game/:id",
-        element:(
-          <PrivateRoute>
-            <GameDetails/>
-          </PrivateRoute>
-        ),
+        element:<GameDetails/>
+          
+
       },
     ]
     
@@ -67,6 +66,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
+    
   </StrictMode>,
 )

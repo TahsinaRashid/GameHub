@@ -131,7 +131,7 @@ const Register=()=>{
              <p>Already have an account? Please <Link className="text-blue-600 underline font-bold" to ="/login">Login</Link></p>
           </div>
           <div className="text-center my-4">
-            <button onClick={handleGoogleSignIn} className="bg-blue-200 hover:bg-blue-400 font-bold rounded-2xl px-6 "><Link to="/profile">Sign in with Google</Link></button>
+            <button onClick={handleGoogleSignIn} className="bg-blue-200 hover:bg-blue-400 font-bold rounded-2xl px-6 ">Sign in with Google</button>
           </div>
           <button className="btn bg-yellow-600 ">Sign-In</button>
           <div><a className="link link-hover">Forgot password?</a></div>

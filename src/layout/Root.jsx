@@ -1,12 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import {Outlet, useLocation} from 'react-router'
 import Navbar from "../header/navbar";
 import Footer from "../footer/Footer";
 import backgroundImage from "../assets/back.png";
+import { AuthContext } from '../context/AuthContext';
 
 const Root = () => {
     const backgroundImageURL=`url(${backgroundImage})`;
     const location = useLocation();
+    const { loading } = useContext(AuthContext);
+    if (loading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+                <p className="ml-3 text-xl">Loading...</p>
+            </div>
+        );
+    }
     useEffect(() => {
         const pathname = location.pathname;
         let title = "GameHub";

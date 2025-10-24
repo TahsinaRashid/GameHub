@@ -79,9 +79,9 @@ const Home = () => {
                                 <p className="text-sm mt-1 opacity-100">{game.genre}</p>
                                 <div className="mt-3 flex items-center justify-between">
                                     <span className="text-md font-semibold">Rating: {game.rating} ⭐</span>
-                                    <button className="bg-yellow-600 text-black px-3 py-1 rounded-full text-sm font-semibold hover:bg-amber-800 transition">
+                                    {/* <button className="bg-yellow-600 text-black px-3 py-1 rounded-full text-sm font-semibold hover:bg-amber-800 transition">
                                         View Details
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </NavLink>
