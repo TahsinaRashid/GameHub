@@ -9,6 +9,7 @@ import Home from './pages/Home.jsx';
 import Profile from './pages/profile.jsx';
 import GameDetails from './pages/GameDetails.jsx';
 import Register from './pages/Register.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path : '/profile',
-        Component:Profile
+        element:(
+          <PrivateRoute>
+            <Profile/>
+          </PrivateRoute>
+        ),
       },
       {
         path : '/game/:id',
