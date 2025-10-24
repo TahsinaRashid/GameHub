@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         Component:Register
       },
       {
-        path : '/profile',
+        path : "/profile",
         element:(
           <PrivateRoute>
             <Profile/>
@@ -37,8 +37,12 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path : '/game/:id',
-        Component:GameDetails
+        path : "/game/:id",
+        element:(
+          <PrivateRoute>
+            <GameDetails/>
+          </PrivateRoute>
+        ),
       },
     ]
   },
