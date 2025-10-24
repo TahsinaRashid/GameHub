@@ -2,11 +2,13 @@ import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup} from "
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase.init";
+import {motion} from 'framer-motion';
+
 const googleprovider = new GoogleAuthProvider();
 const Login =()=>{
     const navigate = useNavigate();
     const[error,setError]=useState('');
-      const [ user,setUser]=useState(null);
+    //   const [ user,setUser]=useState(null);
       const handleSignIn =() =>{
           signInWithPopup(auth,googleprovider)
           .then(result =>{
@@ -39,7 +41,10 @@ const Login =()=>{
     }
     return(
 
-    <div className=" md:mt-8 w-full m-auto max-w-lg lg:mt-30 ">
+    < motion.div initial={{ opacity: 0, y: -50 }} 
+            animate={{ opacity: 1, y: 0 }}   
+            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+             className=" md:mt-8 w-full m-auto max-w-lg lg:mt-30 ">
       <div className="">
         <h1 className="text-3xl font-bold text-gray-200 border-2 border-gray-200 bg-amber-900 text-center">Login now!</h1>
         <form onSubmit={handleLogin}>
@@ -58,9 +63,16 @@ const Login =()=>{
         <div>
              <p className="text-white font-bold">Don't have an account? Do <Link className="text-yellow-600 underline font-bold" to ="/register">Register</Link></p>
           </div>
-          <div className="text-center my-4"><button onClick={handleSignIn } className="bg-blue-200 hover:bg-blue-400 font-bold rounded-2xl px-6 "><Link to="/profile">Sign in with Google</Link></button></div>
+          <div className="text-center my-4">
+                    <button 
+                        onClick={handleSignIn} 
+                        className="bg-blue-200 hover:bg-blue-400 font-bold rounded-2xl px-6 py-2 w-full"
+                    >
+                        Sign in with Google
+                    </button>
+                </div>
       </div>
-    </div>
+    </motion.div>
 
     );
 };

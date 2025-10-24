@@ -1,17 +1,20 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router";
+import { motion } from 'framer-motion';
 
 const googleprovider = new GoogleAuthProvider();
 const Register=()=>{
+  const navigate = useNavigate();
   const [ user,setUser]=useState(null);
   const handleGoogleSignIn =() =>{
           signInWithPopup(auth,googleprovider)
           .then(result =>{
               console.log(result.user);
               setUser(result.user);
+              navigate('/profile');
           })
           .catch(error => {
               console.log(error);
@@ -52,10 +55,18 @@ const Register=()=>{
 
         createUserWithEmailAndPassword(auth,email,password)
         .then( result=>{
-            console.log('After creating of a new user',result.user)
+            console.log('After creating of a new user',result.user);
+            updateProfile(result.user, {
+                displayName: name,
+                photoURL: photoURL
+            }).then(() => {
+                console.log('Profile updated successfully');
+            }).catch((error) => {
+                console.error('Profile update error:', error);
+            });
             setSuccess(true);
             event.target.reset();
-            return;
+            navigate('/profile');
 
         })
         .catch(error=>{
@@ -70,7 +81,7 @@ const Register=()=>{
 
     }
     return(
-      <div className="hero  min-h-screen">
+      <motion.div className="hero  min-h-screen">
   <div className="hero-content flex-col">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold text-white">Register now!</h1>
@@ -89,6 +100,7 @@ const Register=()=>{
           <div className="relative">
             <input type={showPassword ? 'text' : 'password'} name="password" className="input" placeholder="Password" />
             <button
+            type="button"
             onClick={handleTogglePasswordShow}
              className="btn btn-xs top-2 right-5 absolute">
               {showPassword? <FaEyeSlash />:<FaEye />}
@@ -123,7 +135,7 @@ const Register=()=>{
       </div>
     </div>
   </div>
-</div>
+</motion.div>
  );
 };
 export default Register;
