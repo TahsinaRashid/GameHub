@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, sendEmailVerification, signInWithPopup, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase.init";
@@ -31,7 +31,9 @@ const Register=()=>{
         const email=event.target.email.value;
         const password=event.target.password.value;
         const terms=event.target.terms.checked;
-        console.log('register click',email,password,terms);
+        const name=event.target.name.value;
+        const photo=event.target.photo.value;
+        console.log('register click',email,password,terms,name,photo);
 
         const passwordPattern=/^.{6,}$/;
         const casePattern=/^(?=.*[a-z])(?=.*[A-Z]).+$/;
@@ -56,17 +58,23 @@ const Register=()=>{
         createUserWithEmailAndPassword(auth,email,password)
         .then( result=>{
             console.log('After creating of a new user',result.user);
-            updateProfile(result.user, {
-                displayName: name,
-                photoURL: photoURL
-            }).then(() => {
-                console.log('Profile updated successfully');
-            }).catch((error) => {
-                console.error('Profile update error:', error);
-            });
             setSuccess(true);
             event.target.reset();
-            navigate('/profile');
+
+            const profile={
+                displayName:name,
+                photoURL:photo
+            }
+            updateProfile(result.user,profile);
+
+
+
+
+            // navigate('/profile');
+            sendEmailVerification(result.user)
+            .then(()=>{
+              alert('Please log in to your main and verify your email address')
+            })
 
         })
         .catch(error=>{
@@ -80,6 +88,10 @@ const Register=()=>{
         setShowPassword(!showPassword);
 
     }
+
+    const handleForgetPassword=()=>{
+      console.log('Forget Password')
+    }
     return(
       <motion.div className="hero  min-h-screen">
   <div className="hero-content flex-col">
@@ -91,11 +103,11 @@ const Register=()=>{
         <form onSubmit={handleRegister}>
             <fieldset className="fieldset">
           <label className="label font-bold">Name</label>
-          <input type="name" name="name" className="input" placeholder="Your Name" />
+          <input type="text" name="name" className="input" placeholder="Your Name" />
           <label className="label font-bold">Email</label>
           <input type="email" name="email" className="input" placeholder="Email" />
           <label className="label font-bold">Photo URL</label>
-          <input type="url" name="url" className="input" placeholder="Your PhotoURL" />
+          <input type="text" name="photo" className="input" placeholder="Your PhotoURL" />
           <label className="label font-bold">Password</label>
           <div className="relative">
             <input type={showPassword ? 'text' : 'password'} name="password" className="input" placeholder="Password" />

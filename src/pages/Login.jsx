@@ -1,5 +1,5 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
-import React, { useState } from "react";
+import { GoogleAuthProvider, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
+import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase.init";
 import {motion} from 'framer-motion';
@@ -8,6 +8,7 @@ const googleprovider = new GoogleAuthProvider();
 const Login =()=>{
     const navigate = useNavigate();
     const[error,setError]=useState('');
+    const emailRef=useRef();
     //   const [ user,setUser]=useState(null);
       const handleSignIn =() =>{
           signInWithPopup(auth,googleprovider)
@@ -33,12 +34,26 @@ const Login =()=>{
         .then(result =>{
             console.log(result.user);
             navigate('/profile');
+            if(!result.user.emailVerified){
+                alert('please verify your email address');
+            }
         })
         .catch(error =>{
             console.log(error.message);
             setError(error.message);
         })
     }
+    const handleForgetPassword=()=>{
+        
+        const email=emailRef.current.value;
+        console.log("Forget Password",email);
+        sendPasswordResetEmail(auth,email)
+        .then(()=>{
+            alert('Please check your email')
+        })
+        .catch()
+    }
+
     return(
 
     < motion.div initial={{ opacity: 0, y: -50 }} 
@@ -50,10 +65,15 @@ const Login =()=>{
         <form onSubmit={handleLogin}>
             <fieldset className="fieldset">
           <label className="label font-bold text-white">Email</label>
-          <input type="email" name="email" className="input w-full m-full" placeholder="Your Email" />
+          <input 
+          type="email" 
+          name="email" 
+          className="input w-full m-full" 
+          ref={emailRef}
+          placeholder="Your Email" />
           <label className="label font-bold text-white ">Password</label>
           <input type="password" name="password" className="input w-full m-full" placeholder="Your Password" />
-          <div><a className="link link-hover font-bold text-white">Forgot password?</a></div>
+          <div onClick={handleForgetPassword}><a className="link link-hover font-bold text-white">Forgot password?</a></div>
           <button className="text-white btn bg-amber-900 hover:bg-amber-400 hover:text-black">Login</button>
         </fieldset>
         </form>
