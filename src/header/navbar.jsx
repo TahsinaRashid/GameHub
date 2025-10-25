@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"; 
 import logo from "../assets/logo.png";
 import  { app}  from "../firebase/firebase.init"; 
 import {auth} from "../firebase/firebase.init";
 
 const Navbar = () => {
+       const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -20,9 +21,11 @@ const Navbar = () => {
         .then(() =>{
             console.log('Successfully Signed Out');
             setUser(null);
+            Navigate('/login');
         })
         .catch(error=>{
             console.log(error);
+            navigate('/login');
         })
     }
 
@@ -77,3 +80,5 @@ const Navbar = () => {
     );
 };
 export default Navbar;
+
+

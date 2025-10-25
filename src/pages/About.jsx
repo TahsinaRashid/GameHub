@@ -7,10 +7,10 @@ const About = () => {
                 About GameHub - A Game Library
             </h1>
             <p className="max-w-3xl text-lg text-white mb-8">
-                GameHub is dedicated to providing the best mobile gaming experience by offering a massive library of action, strategy, and casual games. Our mission is to connect gamers with their next favorite adventure.
+                GameHub is dedicated to providing the best mobile gaming experience by offering a massive library of action, strategy and casual games. Our mission is to connect gamers with their next favorite adventure.
             </p>
             <p className="max-w-3xl text-lg text-white">
-                Founded in 2023, we believe in seamless access to quality games like PUBG, Free Fire, and Ludo King. Enjoy gaming without limits!
+                Founded in 2025, we believe in seamless access to quality games like PUBG, Free Fire, and Ludo King. Enjoy gaming without limits!
             </p>
         </div>
     );
