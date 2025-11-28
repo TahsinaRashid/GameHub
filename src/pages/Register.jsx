@@ -93,7 +93,7 @@ const Register=()=>{
       console.log('Forget Password')
     }
     return(
-      <motion.div className=" container bg-black/60  min-h-screen">
+      <motion.div className=" container min-h-screen">
   <div className="hero-content flex-col">
     <div className="text-center bg-black/60 lg:text-left">
       <h1 className="text-5xl font-bold text-white">Register now!</h1>
