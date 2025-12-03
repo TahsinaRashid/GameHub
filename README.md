@@ -1,16 +1,26 @@
-# React + Vite
+# 🛒 GameHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Game Hub is a web application that serves as a centralized platform for users to discover, explore and play online games. Users can browse games by catagory, view details and access links to play games seamlessly.
 
-Currently, two official plugins are available:
+## Features
+- Dynamic Content Discovery and Filtering
+- Rich Game Detail Presentation
+- Customizable User Interface
+- Performance and Scalability
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React.js 
+- JavaScript 
+- Tailwind CSS 
+- API (The source for all video game data). 
 
-## React Compiler
+### 🚀 Live Demo:
+🔗 https://gaming-app-by-prapti.netlify.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
