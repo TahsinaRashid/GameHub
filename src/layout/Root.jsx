@@ -34,6 +34,9 @@ const Root = () => {
         }else if(pathname==='/allgames'){
             title="All Games"
         }
+        else if(pathname==='/contact'){
+            title="Contact"
+        }
          else {
             title = "404 Not Found"; 
         }

@@ -16,6 +16,7 @@ import AuthProvider from './context/AuthContext.jsx';
 import AllGames from './pages/AllGames.jsx';
 //import GameDetails from './pages/GameDetails.jsx';
 import HomePage from './pages/HomePage.jsx';
+import Contact from './pages/Contact.jsx';
 
 
 const router = createBrowserRouter([
@@ -52,12 +53,12 @@ const router = createBrowserRouter([
             <About/> 
         ),
        },
-      // {
-      //   path : "/game/:id",
-      //   element:<GameDetails/>
+      {
+        path : "/contact",
+        element:<Contact/>
           
 
-      // },
+      },
       
     ]
     
