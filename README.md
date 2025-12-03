@@ -16,7 +16,7 @@ Game Hub is a web application that serves as a centralized platform for users to
 - API (The source for all video game data). 
 
 ### 🚀 Live Demo:
-🔗 https://gaming-app-by-prapti.netlify.app/
+🔗 https://gamehub-prapti.netlify.app/
 
 
 
