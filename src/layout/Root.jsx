@@ -2,16 +2,15 @@ import React, { useContext, useEffect } from "react";
 import {Outlet, useLocation} from 'react-router'
 import Navbar from "../header/navbar";
 import Footer from "../footer/Footer";
-import backgroundImage from "../assets/back.png";
 import { AuthContext } from '../context/AuthContext';
 
 const Root = () => {
-    const backgroundImageURL=`url(${backgroundImage})`;
+
     const location = useLocation();
     const { loading } = useContext(AuthContext);
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+            <div className="min-h-screen flex items-center justify-center bg-red-950 text-white">
                 <p className="ml-3 text-xl">Loading...</p>
             </div>
         );
@@ -32,7 +31,10 @@ const Root = () => {
             title = "My Profile";
         } else if (pathname === '/about') {
             title = "About Us";
-        } else {
+        }else if(pathname==='/allgames'){
+            title="All Games"
+        }
+         else {
             title = "404 Not Found"; 
         }
         document.title = title;
@@ -40,19 +42,17 @@ const Root = () => {
     }, [location.pathname]);
     return(
         <>
-            <div 
-                className="min-h-screen bg-cover bg-center bg-fixed" 
-                style={{ 
-                    backgroundImage: backgroundImageURL,
-                }}
-            >
-                <Navbar />
-                <div className="container mx-auto p-4">
-                 <Outlet />
+        <div>
+            <div className="bg-red-950">
+                <div  className="sticky top-0 z-50  bg-red-900">
+                    <Navbar />
                 </div>
-            
+                <Outlet />
             </div>
             <Footer />
+        </div>
+            
+    
         </>
         
     );

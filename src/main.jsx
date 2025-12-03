@@ -5,14 +5,17 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from './layout/Root.jsx';
 import Login from './pages/Login.jsx';
-import Home from './pages/Home.jsx';
+//import Home from './pages/HomePage.jsx';
 import Profile from './pages/profile.jsx';
-import GameDetails from './pages/GameDetails.jsx';
+// import GameDetails from './pages/GameDetails.jsx';
 import Register from './pages/Register.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import About from './pages/About.jsx';
 import AuthProvider from './context/AuthContext.jsx';
+import AllGames from './pages/AllGames.jsx';
+//import GameDetails from './pages/GameDetails.jsx';
+import HomePage from './pages/HomePage.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,7 +25,7 @@ const router = createBrowserRouter([
     children:[
       {
         index: true,
-        Component:Home
+        Component: HomePage
       },
       {
         path : '/login',
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
       {
         path : '/register',
         Component:Register
+      },
+      {
+        path : '/all-games',
+        element:(<AllGames/>),
       },
       {
         path : "/profile",
@@ -45,12 +52,13 @@ const router = createBrowserRouter([
             <About/> 
         ),
        },
-      {
-        path : "/game/:id",
-        element:<PrivateRoute><GameDetails/></PrivateRoute>
+      // {
+      //   path : "/game/:id",
+      //   element:<GameDetails/>
           
 
-      },
+      // },
+      
     ]
     
   },
