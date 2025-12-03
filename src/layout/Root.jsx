@@ -11,7 +11,7 @@ const Root = () => {
     if (loading) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-red-950 text-white">
-                <p className="ml-3 text-xl">Loading...</p>
+                <p className="ml-3 text-xl text-white">Loading...</p>
             </div>
         );
     }
@@ -33,11 +33,11 @@ const Root = () => {
             title = "About Us";
         }else if(pathname==='/allgames'){
             title="All Games"
-        }
-        else if(pathname==='/contact'){
-            title="Contact"
-        }
-         else {
+        }else if(pathname==='/contact'){
+            title="Contact";
+        }else if(pathname ==='/game/:id'){
+            title="Game Details";
+        }else {
             title = "404 Not Found"; 
         }
         document.title = title;
@@ -46,7 +46,7 @@ const Root = () => {
     return(
         <>
         <div>
-            <div className="bg-red-950">
+            <div className="bg-red-950 ">
                 <div  className="sticky top-0 z-50  bg-red-900">
                     <Navbar />
                 </div>

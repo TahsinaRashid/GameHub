@@ -5,19 +5,16 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from './layout/Root.jsx';
 import Login from './pages/Login.jsx';
-//import Home from './pages/HomePage.jsx';
 import Profile from './pages/profile.jsx';
-// import GameDetails from './pages/GameDetails.jsx';
 import Register from './pages/Register.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import About from './pages/About.jsx';
 import AuthProvider from './context/AuthContext.jsx';
 import AllGames from './pages/AllGames.jsx';
-//import GameDetails from './pages/GameDetails.jsx';
 import HomePage from './pages/HomePage.jsx';
 import Contact from './pages/Contact.jsx';
-
+import Details from './pages/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +34,7 @@ const router = createBrowserRouter([
         Component:Register
       },
       {
-        path : '/all-games',
+        path : '/allgames',
         element:(<AllGames/>),
       },
       {
@@ -56,6 +53,12 @@ const router = createBrowserRouter([
       {
         path : "/contact",
         element:<Contact/>
+          
+
+      },
+      {
+        path : "/game/:id",
+        element:(<Details/>),
           
 
       },

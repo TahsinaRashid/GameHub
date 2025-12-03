@@ -60,8 +60,8 @@ const Login = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center justify-center min-h-screen p-4 bg-cover bg-center"
         >
-            <div className="bg-black/60  p-8 rounded-xl shadow-2xl w-full max-w-md border border-red-700/50">
-                <h2 className="text-4xl font-extrabold text-white text-center mb-6 drop-shadow-lg">Login Now!</h2>
+            <div className="  p-8 rounded-xl shadow-2xl w-full max-w-md ">
+                <h2 className="text-4xl font-extrabold text-yellow-500 text-center mb-6 drop-shadow-lg">Login Now!</h2>
                 
                 {error && <p className="text-red-400 text-center mb-4 p-2 bg-red-900/50 rounded">{error}</p>}
                 {success && <p className="text-green-400 text-center mb-4 p-2 bg-green-900/50 rounded">{success}</p>}

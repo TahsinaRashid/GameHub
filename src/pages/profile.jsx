@@ -60,10 +60,10 @@ const Profile = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center justify-center min-h-screen p-4 bg-cover bg-center"
+            className="flex items-center justify-center min-h-screen bg-cover bg-center"
         >
-            <div className="bg-black/60  p-8 rounded-xl shadow-2xl w-full max-w-lg border border-red-700/50 text-white">
-                <h2 className="text-3xl font-extrabold text-center mb-6 drop-shadow-lg text-red-400">My Profile</h2>
+            <div className="  p-8 rounded shadow-2xl w-full max-w-lg border border-red-700/50 text-white">
+                <h2 className="text-3xl font-extrabold text-center mb-6 drop-shadow-lg text-yellow-500">MY PROFILE</h2>
                 <div className="flex justify-center mb-6">
                     <img
                         src={photoURL || "https://placehold.co/150x150/505050/ffffff?text=U"}
@@ -78,7 +78,7 @@ const Profile = () => {
                     </div>
                     <div className="p-4 bg-gray-800/70 rounded-lg border-l-4 border-red-500">
                         <p className="text-lg font-bold">Email:</p>
-                        <p className="text-xl font-light text-red-300">{userEmail}</p>
+                        <p className="text-md font-light text-red-300">{userEmail}</p>
                     </div>
                 </div>
                 <div className="mt-8 p-6 bg-gray-800/80 rounded-lg shadow-inner">

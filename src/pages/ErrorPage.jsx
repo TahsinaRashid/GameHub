@@ -11,19 +11,22 @@ const ErrorPage = () => {
     return (
 
         <div>
-            <Navbar/>
-             <div className="flex flex-col items-center justify-center py-2 text-white p-6"> 
+            <div className="sticky top-0 z-50  bg-red-900">
+                <Navbar/>
+            </div>
+            
+             <div className="bg-red-950 flex flex-col items-center justify-center py-8 text-white"> 
             <div>
                 <img src={back} alt="" />
             </div>
             
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <p className="text-lg text-gray-200 mt-4 mb-6 text-center">
                 Sorry!Maybe This Page is Deleted By The Developer
             </p>
             
             <Link 
                 to="/" 
-                className="bg-amber-900 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-lg"
+                className="bg-yellow-500 hover:bg-amber-700 text-black font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-lg"
             >
                 Back To Home
             </Link>

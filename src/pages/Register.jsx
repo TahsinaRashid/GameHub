@@ -93,22 +93,22 @@ const Register=()=>{
       console.log('Forget Password')
     }
     return(
-      <motion.div className=" container min-h-screen">
+      <motion.div className=" max-h-screen">
   <div className="hero-content flex-col">
-    <div className="text-center bg-black/60 lg:text-left">
-      <h1 className="text-5xl font-bold text-white">Register now!</h1>
+    <div className="text-center  lg:text-left">
+      <h1 className="text-5xl font-bold text-yellow-500">Register now!</h1>
     </div>
-    <div className="card bg-white w-full max-w-sm shrink-0 shadow-2xl">
+    <div className=" w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
         <form onSubmit={handleRegister}>
             <fieldset className="fieldset">
-          <label className="label font-bold">Name</label>
+          <label className="label font-bold text-white">Name</label>
           <input type="text" name="name" className="input" placeholder="Your Name" />
-          <label className="label font-bold">Email</label>
+          <label className="label font-bold text-white">Email</label>
           <input type="email" name="email" className="input" placeholder="Email" />
-          <label className="label font-bold">Photo URL</label>
+          <label className="label font-bold text-white">Photo URL</label>
           <input type="text" name="photo" className="input" placeholder="Your PhotoURL" />
-          <label className="label font-bold">Password</label>
+          <label className="label font-bold text-white">Password</label>
           <div className="relative">
             <input type={showPassword ? 'text' : 'password'} name="password" className="input" placeholder="Password" />
             <button
@@ -120,21 +120,21 @@ const Register=()=>{
              
           </div>
           <div>
-            <label className="label">
+            <label className="label text-white">
                <input
                 type="checkbox" 
                 name="terms"
-               className="checkbox font-bold" />
+               className=" font-bold text-white " />
                Accept Our Terms & Conditions</label>
           </div>
           <div>
-             <p>Already have an account? Please <Link className="text-blue-600 underline font-bold" to ="/login">Login</Link></p>
+             <p className="text-white">Already have an account? Please <Link className="text-blue-600 underline font-bold" to ="/login">Login</Link></p>
           </div>
           <div className="text-center my-4">
             <button onClick={handleGoogleSignIn} className="bg-blue-400 font-bold rounded-2xl px-6 ">Sign in with Google</button>
           </div>
-          <button className="btn bg-yellow-600 ">Sign-In</button>
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <button className="bg-yellow-500 text-black text-center mt-2 py-2 rounded-lg font-bold hover:bg-amber-700 transition ">Sign-In</button>
+          <div><a className="link link-hover text-white">Forgot password?</a></div>
         </fieldset>
         {
             success && <p className="text-green-700 ">Account created successfully</p>
